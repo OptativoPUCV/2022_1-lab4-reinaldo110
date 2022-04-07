@@ -1,0 +1,6 @@
+Thu Apr  7 16:11:12 UTC 2022: 
+ hashmap.c | 22 ++++++++++++++++++----
+ 1 file changed, 18 insertions(+), 4 deletions(-)
+ tests:  4|5
+total_score: 20/70
+be2d0af
