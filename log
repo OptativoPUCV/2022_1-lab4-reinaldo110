@@ -48,3 +48,17 @@ Sat Apr  9 04:49:26 UTC 2022:
  1 file changed, 5 insertions(+), 3 deletions(-)
  tests:  0|0
 2084b91
+Sat Apr  9 04:57:29 UTC 2022: 
+ hashmap.c | 19 +++++++++++--------
+ 1 file changed, 11 insertions(+), 8 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:116:9: error: null argument where non-null required (argument 2) [-Werror=nonnull]
+     if (strcmp(map->buckets[i]->key, NULL) == 0)
+         ^~~~~~
+hashmap.c:118:16: error: null argument where non-null required (argument 2) [-Werror=nonnull]
+         while (strcmp(map->buckets[i]->key, NULL) == 0)
+                ^~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+20325a4
