@@ -113,9 +113,9 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
     int i = 0;
-    if (strlen(map->buckets[i]->key) == 0)
+    if (!map->buckets[i]->key)
     {
-        while (strlen(map->buckets[i]->key) == 0)
+        while (!map->buckets[i]->key)
         {
             i++;
         }
