@@ -115,11 +115,11 @@ Pair * firstMap(HashMap * map) {
     int i = 0;
     if (!map->buckets[i]->key)
     {
-        while (!map->buckets[i]->key)
+        for (i; i < map->capacity; i++)
         {
-            i++;
+            map->current = i;
+            if (map->buckets[i]->key != NULL) break;
         }
-        map->current = i;
         return map->buckets[i];
     }
     else

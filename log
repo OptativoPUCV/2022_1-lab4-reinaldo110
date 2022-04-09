@@ -72,3 +72,14 @@ Sat Apr  9 05:03:09 UTC 2022:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 a6a1899
+Sat Apr  9 05:06:38 UTC 2022: 
+ hashmap.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:118:9: error: statement with no effect [-Werror=unused-value]
+         for (i; i < map->capacity; i++)
+         ^~~
+cc1: all warnings being treated as errors
+Compilation failed
+b039e35
