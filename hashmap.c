@@ -113,13 +113,15 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
     map->current = 0;
-    if (map->buckets[(int) map->current]->key == NULL)
+    int pos = map->current;
+    if (map->buckets[pos]->key == NULL)
     {
-        while (map->buckets[(int) map->current]->key == NULL)
+        while (map->buckets[pos]->key == NULL)
         {
             map->current++;
+            pos++;
         }
-        return map->buckets[(int) map->current];
+        return map->buckets[pos];
     }
     else return map->buckets[0];
 }
