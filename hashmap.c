@@ -125,6 +125,7 @@ Pair * firstMap(HashMap * map) {
         }
     }
     else return map->buckets[index];
+    return map->buckets[index];
 }
 
 Pair * nextMap(HashMap * map) {
