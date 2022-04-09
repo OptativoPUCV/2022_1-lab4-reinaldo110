@@ -117,7 +117,6 @@ Pair * firstMap(HashMap * map) {
     {
         while (map->buckets[index] == NULL && map->buckets[index]->key == NULL)
         {
-            if (is_equal(map->buckets[index]->key, "") == 1) return;
             index = (index + 1) % map->capacity;
         }
         if (map->buckets[index] != NULL)
