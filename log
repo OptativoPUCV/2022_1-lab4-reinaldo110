@@ -16,3 +16,14 @@ Thu Apr  7 16:14:30 UTC 2022:
  tests:  5|4
 total_score: 30/70
 f2e5597
+Sat Apr  9 04:35:39 UTC 2022: 
+ hashmap.c | 41 +++++++++++++++++++++++++++++++----------
+ 1 file changed, 31 insertions(+), 10 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:61:13: error: unused variable ‘oldBuck’ [-Werror=unused-variable]
+     Pair ** oldBuck = map->buckets;
+             ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+6b49d23

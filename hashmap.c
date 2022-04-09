@@ -58,7 +58,10 @@ void insertMap(HashMap * map, char * key, void * value) {
 
 void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
-
+    Pair ** oldBuck = map->buckets;
+    map->capacity *= 2;
+    map->buckets = (Pair **) calloc (map->capacity, sizeof(Pair **));
+    map->size = 0;
 
 }
 
@@ -67,28 +70,46 @@ HashMap * createMap(long capacity) {
     HashMap * map = (HashMap *) malloc (sizeof(HashMap *));
     map->buckets = (Pair **) calloc (capacity, sizeof(Pair **));
     map->capacity = capacity;
-    map->size = 0;
     map->current = -1;
+    map->size = 0;
     return map;
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-
-
+    long index = hash(key, map->capacity);
+    while (map->buckets[index] != NULL && map->buckets[index]->key != NULL)
+    {
+        if (is_equal(map->buckets[index]->key, key) == 1) 
+        {
+            map->current = index;
+            map->buckets[index]->key = NULL;
+            map->size--;
+        }
+        index = (index + 1) % map->capacity;
+    }
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
-
-
+    long index = hash(key, map->capacity);
+    while (map->buckets[index] != NULL && map->buckets[index]->key != NULL)
+    {
+        if (map->buckets[index] == NULL) return NULL;
+        if (is_equal(map->buckets[index]->key, key) == 1) 
+        {
+            map->current = index;
+            return map->buckets[index];
+        }
+        index = (index + 1) % map->capacity;
+    }
     return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
-
-    return NULL;
+    map->current = 0;
+    return map->buckets[0];
 }
 
 Pair * nextMap(HashMap * map) {
-
-    return NULL;
+    map->current++;
+    return map->buckets[(int) map->current];
 }
