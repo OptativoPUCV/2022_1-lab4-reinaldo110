@@ -93,3 +93,20 @@ Sat Apr  9 05:16:07 UTC 2022:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 d0b8d0a
+Sat Apr  9 05:20:30 UTC 2022: 
+ hashmap.c | 19 +++++++++----------
+ 1 file changed, 9 insertions(+), 10 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘firstMap’:
+hashmap.c:120:62: error: ‘return’ with no value, in function returning non-void [-Werror]
+             if (is_equal(map->buckets[index]->key, "") == 1) return;
+                                                              ^~~~~~
+hashmap.c:114:8: note: declared here
+ Pair * firstMap(HashMap * map) {
+        ^~~~~~~~
+hashmap.c:129:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+6e57e29
