@@ -119,7 +119,7 @@ Pair * firstMap(HashMap * map) {
         while (check == 0)
         {
             index = (index + 1) % map->capacity;
-            if (map->buckets[index]->key != NULL)
+            if (map->buckets[index] != NULL && map->buckets[index]->key != NULL)
             {
                 check = 1;
                 return map->buckets[index];
