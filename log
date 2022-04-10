@@ -294,3 +294,14 @@ hashmap.h:28:8: note: expected ‘HashMap * {aka struct HashMap *}’ but argume
 cc1: all warnings being treated as errors
 Compilation failed
 6622803
+Sun Apr 10 23:04:21 UTC 2022: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:61:13: error: variable ‘oldBuck’ set but not used [-Werror=unused-but-set-variable]
+     Pair ** oldBuck = (Pair **) calloc (map->capacity, sizeof(Pair **));
+             ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+7d8edd2
