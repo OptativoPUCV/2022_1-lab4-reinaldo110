@@ -112,7 +112,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-    long index;
+    long index = map->current;
     index = (index + 1) % map->capacity;
     if (map->current == map->capacity) return NULL;
     while (map->buckets[index] == NULL || map->buckets[index]->key == NULL)

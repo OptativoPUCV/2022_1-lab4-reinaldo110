@@ -214,3 +214,13 @@ hashmap.c:116:20: error: ‘index’ is used uninitialized in this function [-We
 cc1: all warnings being treated as errors
 Compilation failed
 5f7c519
+Sun Apr 10 22:12:30 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+/tmp/ccfU3hNA.o: In function `next_test':
+test.c:(.text+0x1648): undefined reference to `nextMap'
+test.c:(.text+0x16c8): undefined reference to `nextMap'
+test.c:(.text+0x1715): undefined reference to `nextMap'
+collect2: error: ld returned 1 exit status
+Compilation failed
+419ccf3
