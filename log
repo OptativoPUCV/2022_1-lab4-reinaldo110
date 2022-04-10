@@ -203,3 +203,14 @@ Sun Apr 10 22:11:17 UTC 2022:
  tests:  13|2
 total_score: 50/70
 0f2db87
+Sun Apr 10 22:12:10 UTC 2022: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:0:
+test.c: In function ‘firstMap’:
+hashmap.c:116:20: error: ‘index’ is used uninitialized in this function [-Werror=uninitialized]
+     index = (index + 1) % map->capacity;
+             ~~~~~~~^~~~
+cc1: all warnings being treated as errors
+Compilation failed
+5f7c519
