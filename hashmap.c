@@ -113,53 +113,13 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
     long index = 0;
+    index = (index + 1) % map->capacity;
     int check = 0;
-    if (map->buckets[index]->key == NULL)
+    if (map->current == map->capacity) return NULL;
+    while (map->buckets[index] == NULL || map->buckets[index]->key == NULL)
     {
-        while (check == 0)
-        {
-            index = (index + 1) % map->capacity;
-            if (map->buckets[index] != NULL && map->buckets[index]->key != NULL)
-            {
-                check = 1;
-                map->current = index;
-                return map->buckets[index];
-                break;
-            }
-        }
-    }
-    else
-    {
-        map->current = index;
-        return map->buckets[index];
+        index = (index + 1) % map->capacity;
     }
     map->current = index;
     return map->buckets[index];
-}
-
-Pair * nextMap(HashMap * map) {
-    long index = map->current;
-    index = (index + 1) % map->capacity;
-    if (map->buckets[index] != NULL && map->buckets[index]->key == NULL)
-    {
-        int check = 0;
-        while (check == 0)
-        {
-            index = (index + 1) % map->capacity;
-            if (map->buckets[index] != NULL && map->buckets[index]->key != NULL)
-            {
-                check = 1;
-                map->current = index;
-                return map->buckets[index]->value;
-                break;
-            }
-        }
-    }
-    else 
-    {
-        map->current = index;
-        return map->buckets[index]->value;
-    }
-    map->current = index;
-    return map->buckets[index]->value;
 }
