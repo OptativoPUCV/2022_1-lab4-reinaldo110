@@ -224,3 +224,9 @@ test.c:(.text+0x1715): undefined reference to `nextMap'
 collect2: error: ld returned 1 exit status
 Compilation failed
 419ccf3
+Sun Apr 10 22:16:42 UTC 2022: 
+ hashmap.c | 29 ++++++++++++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
+ tests:  15|2
+total_score: 50/70
+99cc4e6
