@@ -278,3 +278,19 @@ Sun Apr 10 22:55:49 UTC 2022:
  1 file changed, 2 deletions(-)
  tests:  0|0
 660797e
+Sun Apr 10 23:03:48 UTC 2022: 
+ hashmap.c | 10 +---------
+ 1 file changed, 1 insertion(+), 9 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:63:14: error: passing argument 1 of ‘firstMap’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+     firstMap(oldBuck);
+              ^~~~~~~
+In file included from hashmap.c:6:0,
+                 from test.c:4:
+hashmap.h:28:8: note: expected ‘HashMap * {aka struct HashMap *}’ but argument is of type ‘Pair ** {aka struct Pair **}’
+ Pair * firstMap(HashMap * table);
+        ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+6622803
