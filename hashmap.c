@@ -155,6 +155,11 @@ Pair * nextMap(HashMap * map) {
             }
         }
     }
-    else return map->buckets[index]->value;
+    else 
+    {
+        map->current = index;
+        return map->buckets[index]->value;
+    }
+    map->current = index;
     return map->buckets[index]->value;
 }
