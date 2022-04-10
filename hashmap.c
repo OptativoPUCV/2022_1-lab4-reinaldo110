@@ -141,11 +141,11 @@ Pair * nextMap(HashMap * map) {
     long index;
     index = map->current;
     index = (index + 1) % map->capacity;
-    if (index == 0) return NULL;
     while (map->buckets[index] == NULL || map->buckets[index]->key == NULL)
     {
         index = (index + 1) % map->capacity;
     }
+    if (index == 0) return NULL;
     map->current = index;
     return map->buckets[index];
 }
