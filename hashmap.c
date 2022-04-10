@@ -128,8 +128,11 @@ Pair * firstMap(HashMap * map) {
             }
         }
     }
-    else return map->buckets[index];
-    return map->buckets[index];
+    else
+    {
+        map->current = index;
+        return map->buckets[index];
+    }
 }
 
 Pair * nextMap(HashMap * map) {
@@ -144,11 +147,11 @@ Pair * nextMap(HashMap * map) {
             {
                 check = 1;
                 map->current = index;
-                return map->buckets[index];
+                return map->buckets[index]->value;
                 break;
             }
         }
     }
-    else return map->buckets[index];
-    return map->buckets[index];
+    else return map->buckets[index]->value;
+    return map->buckets[index]->value;
 }
