@@ -409,3 +409,13 @@ Mon Apr 11 03:45:48 UTC 2022:
  1 file changed, 2 insertions(+), 4 deletions(-)
  tests:  0|0
 907dcbf
+Mon Apr 11 03:50:20 UTC 2022: 
+ hashmap.c | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:74:5: error: expected ‘;’ before ‘}’ token
+     }
+     ^
+Compilation failed
+5082338
