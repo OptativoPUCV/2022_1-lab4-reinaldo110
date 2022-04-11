@@ -70,7 +70,7 @@ void enlarge(HashMap * map) {
             insertMap(map, aux[index]->key, aux[index]->value);
         }
         index = (index + 1) % map->capacity;
-        i++
+        i++;
     }
     map->current = -1;
 }
