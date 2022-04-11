@@ -305,3 +305,8 @@ hashmap.c:61:13: error: variable ‘oldBuck’ set but not used [-Werror=unused-
 cc1: all warnings being treated as errors
 Compilation failed
 7d8edd2
+Mon Apr 11 01:48:37 UTC 2022: 
+ hashmap.c | 1 +
+ 1 file changed, 1 insertion(+)
+ tests:  0|0
+8f2a605
