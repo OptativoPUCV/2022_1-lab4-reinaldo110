@@ -310,3 +310,20 @@ Mon Apr 11 01:48:37 UTC 2022:
  1 file changed, 1 insertion(+)
  tests:  0|0
 8f2a605
+Mon Apr 11 01:57:37 UTC 2022: 
+ hashmap.c | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:72:18: error: assignment makes integer from pointer without a cast [-Werror=int-conversion]
+         valueAux = oldBuck[i]->value;
+                  ^
+hashmap.c:73:32: error: passing argument 3 of ‘insertMap’ makes pointer from integer without a cast [-Werror=int-conversion]
+         insertMap(map, keyAux, valueAux);
+                                ^~~~~~~~
+hashmap.c:42:6: note: expected ‘void *’ but argument is of type ‘long int’
+ void insertMap(HashMap * map, char * key, void * value) {
+      ^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+ddc6662

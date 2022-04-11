@@ -62,8 +62,16 @@ void enlarge(HashMap * map) {
     oldBuck = map->buckets;
     map->capacity *= 2;
     map->buckets = (Pair **) calloc (map->capacity, sizeof(Pair **));
-    map->buckets = oldBuck;
     map->size = 0;
+    int i = 0;
+    char * keyAux;
+    void * valueAux;
+    while (oldBuck[i] != NULL)
+    {
+        keyAux = strdup(oldBuck[i]->key);
+        valueAux = oldBuck[i]->value;
+        insertMap(map, keyAux, valueAux);
+    }
 }
 
 
