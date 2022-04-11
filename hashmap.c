@@ -60,7 +60,8 @@ void enlarge(HashMap * map) {
     enlarge_called = 1; //no borrar (testing purposes)
     int mapCap;
     int i = 0;
-    Pair ** aux = map->buckets;
+    Pair ** aux = (Pair **) calloc (map->capacity, sizeof(Pair **));
+    aux = map->buckets;
     mapCap = map->capacity * 2;
     map = createMap(mapCap);
     while (i < map->capacity)
