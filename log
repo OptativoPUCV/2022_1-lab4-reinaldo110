@@ -383,3 +383,14 @@ Mon Apr 11 03:40:50 UTC 2022:
  1 file changed, 2 insertions(+), 3 deletions(-)
  tests:  0|0
 fa1f375
+Mon Apr 11 03:41:51 UTC 2022: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:63:9: error: assignment from incompatible pointer type [-Werror=incompatible-pointer-types]
+     aux = *map->buckets;
+         ^
+cc1: all warnings being treated as errors
+Compilation failed
+8883705
