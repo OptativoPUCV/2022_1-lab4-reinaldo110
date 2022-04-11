@@ -350,3 +350,15 @@ hashmap.c:61:9: error: variable ‘mapCap’ set but not used [-Werror=unused-bu
 cc1: all warnings being treated as errors
 Compilation failed
 6bb8266
+Mon Apr 11 03:37:32 UTC 2022: 
+ hashmap.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:4:0:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:64:5: error: ‘mapCap’ undeclared (first use in this function); did you mean ‘map’?
+     mapCap = map->capacity * 2;
+     ^~~~~~
+     map
+hashmap.c:64:5: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+75165b2
